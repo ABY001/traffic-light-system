@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
+  padding: 7px 30px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: green;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
 `;
 

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Container from './Container';
 import TrafficLight from './TrafficLight';
 import Button from './Button';
+import Plus from './Plus';
+import HorizontalLine from './HorizontalLine';
+import VerticalLine from './VerticalLine';
 
 const Intersection = () => {
   // Constants for the traffic light timings
@@ -43,11 +46,20 @@ const Intersection = () => {
 
   return (
     <Container>
-        <TrafficLight activeColor={streetALight} />
-        <TrafficLight activeColor={streetBLight} />
-        <TrafficLight activeColor={streetALight} />
-        <TrafficLight activeColor={streetBLight} />
-      <Button onClick={handleReset}>Reset</Button>
+      <Plus>
+        <HorizontalLine>
+          <TrafficLight activeColor={streetALight} />
+          <TrafficLight activeColor={streetALight} />
+        </HorizontalLine>
+        <VerticalLine>
+          <TrafficLight activeColor={streetBLight} />
+          <div className='controls'>
+            <Button onClick={handleReset}>Start</Button>
+            <Button onClick={handleReset}>Reset</Button>
+          </div>
+          <TrafficLight activeColor={streetBLight} />
+        </VerticalLine>
+      </Plus>
     </Container>
   );
 };

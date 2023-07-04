@@ -4,7 +4,7 @@ import Light from './Light';
 import TrafficLightContainer from './TrafficLightContainer';
 
 const GreenLight = styled(Light)`
-  background-color: ${props => (props.active ? 'lime' : 'gray')};
+  background-color: ${props => (props.active ? 'green' : 'gray')};
 `;
 
 const YellowLight = styled(Light)`
