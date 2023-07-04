@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import Container from './Container';
 import TrafficLight from './TrafficLight';
 import Button from './Button';
@@ -6,6 +7,22 @@ import Plus from './Plus';
 import HorizontalLine from './HorizontalLine';
 import VerticalLine from './VerticalLine';
 import Controls from './Controls';
+
+const TitleA = styled.div`
+  position: absolute;
+  top: 2%;
+  left: 26%;
+  font-size: 1.7rem;
+  font-weight: 700;
+`;
+
+const TitleB = styled.div`
+  position: absolute;
+  right: 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+  top: 34%;
+`;
 
 const Intersection = () => {
   // Constants for the traffic light timings
@@ -81,6 +98,8 @@ const Intersection = () => {
           </Controls>
           <TrafficLight activeColor={streetBLight} />
         </VerticalLine>
+        <TitleA>Street A</TitleA>
+        <TitleB>Street B</TitleB>
       </Plus>
     </Container>
   );
