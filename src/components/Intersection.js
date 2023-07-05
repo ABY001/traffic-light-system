@@ -35,12 +35,12 @@ const Intersection = () => {
   const [cycle, setcycle] = useState(0);
 
   useEffect(() => {
-    setcycle(cycle + 1)
+    setcycle(cycle => cycle + 1)
   }, [])
 
   const switchLights = () => {
     // Cleanup the timeouts before cycle starts
-    timerIds.forEach((timerId) => clearTimeout(timerId));
+    timerIds?.forEach((timerId) => clearTimeout(timerId));
 
     // Switch lights for Street A and Street B
     setStreetALight('green');
@@ -66,7 +66,7 @@ const Intersection = () => {
 
     // After half cycle duration, switch lights again by starting all over
     const timer4 = setTimeout(() => {
-      setcycle(cycle + 1)
+      setcycle(cycle => cycle + 1)
     }, (ONE_CYCLE_DURATION * 2 + HALF_CYCLE_DURATION * 2) * 1000);
 
     // Save the timeout IDs in state
