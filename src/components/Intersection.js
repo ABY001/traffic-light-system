@@ -35,8 +35,6 @@ const Intersection = () => {
   const [cycle, setcycle] = useState(0);
 
   useEffect(() => {
-    // Cleanup the timeouts before cycle starts
-    timerIds?.forEach((timerId) => clearTimeout(timerId));
     setcycle(cycle => cycle + 1)
   }, [])
 
