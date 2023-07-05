@@ -87,16 +87,16 @@ const Intersection = () => {
     <Container>
       <Plus>
         <HorizontalLine>
-          <TrafficLight activeColor={streetALight} />
-          <TrafficLight activeColor={streetALight} />
+          <TrafficLight activeColor={streetBLight} />
+          <TrafficLight activeColor={streetBLight} />
         </HorizontalLine>
         <VerticalLine>
-          <TrafficLight activeColor={streetBLight} />
+          <TrafficLight activeColor={streetALight} />
           <Controls>
             <Button onClick={handleReset}>Start</Button>
             <Button onClick={handleReset}>Reset</Button>
           </Controls>
-          <TrafficLight activeColor={streetBLight} />
+          <TrafficLight activeColor={streetALight} />
         </VerticalLine>
         <TitleA>Street A</TitleA>
         <TitleB>Street B</TitleB>
