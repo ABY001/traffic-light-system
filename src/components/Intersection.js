@@ -42,35 +42,37 @@ const Intersection = () => {
     // Start the traffic light cycle again
     const switchLights = () => {
       // Cleanup the timeouts before cycle starts
-      timerIds?.forEach((timerId) => clearTimeout(timerId));
-  
+      if (timerIds.length > 0) {
+        timerIds?.forEach((timerId) => clearTimeout(timerId));
+      }
+
       // Switch lights for Street A and Street B
       setStreetALight('green');
       setStreetBLight('red');
-  
+
       // After one cycle duration, show yellow lights for both streets
       const timer1 = setTimeout(() => {
         setStreetALight('yellow');
         setStreetBLight('yellow');
       }, ONE_CYCLE_DURATION * 1000);
-  
+
       // After half cycle duration, switch lights again
       const timer2 = setTimeout(() => {
         setStreetALight('red');
         setStreetBLight('green');
       }, (ONE_CYCLE_DURATION + HALF_CYCLE_DURATION) * 1000);
-  
+
       // After one cycle duration, show yellow lights for both streets
       const timer3 = setTimeout(() => {
         setStreetALight('yellow');
         setStreetBLight('yellow');
       }, (ONE_CYCLE_DURATION * 2 + HALF_CYCLE_DURATION) * 1000);
-  
+
       // After half cycle duration, switch lights again by starting all over
       const timer4 = setTimeout(() => {
         setcycle(cycle => cycle + 1)
       }, (ONE_CYCLE_DURATION * 2 + HALF_CYCLE_DURATION * 2) * 1000);
-  
+
       // Save the timeout IDs in state
       setTimerIds([timer1, timer2, timer3, timer4]);
     };
