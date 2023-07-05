@@ -21,7 +21,7 @@ const TitleB = styled.div`
   right: 0;
   font-size: 1.7rem;
   font-weight: 700;
-  top: 34%;
+  top: 30%;
 `;
 
 const Intersection = () => {
