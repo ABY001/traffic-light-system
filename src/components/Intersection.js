@@ -41,6 +41,7 @@ const Intersection = () => {
   useEffect(() => {
     // Start the traffic light cycle again
     const switchLights = () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       timerIds.forEach((timerId) => clearTimeout(timerId));
       // Switch lights for Street A and Street B
       setStreetALight('green');
